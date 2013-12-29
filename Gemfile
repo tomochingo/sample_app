@@ -17,9 +17,9 @@ group :development, :test do
  gem 'guard-spork', '1.5.0'
  gem 'childprocess', '0.3.9'
 end
-group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+
+group :development do
+  gem 'annotate', '2.5.0'
 end
 
 group :test do
@@ -27,6 +27,15 @@ group :test do
   gem 'capybara', '2.1.0'
   gem 'factory_girl_rails', '4.2.1'
 end
+
+group :production do
+  gem 'pg', '0.15.1'
+  gem 'rails_12factor', '0.0.2'
+end
+
+# `attr_accessible` is extracted out of Rails into a gem. Please use new recommended protection model for params(strong_parameters) or add `protected_attributes` to your Gemfile to use old one
+#gem 'protected_attributes'
+#gem 'devise', '3.0.0.rc'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
